@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 else cart.push({ id, name, price, qty: 1 });
 
                 saveCart(cart);
-                alert("Added to cart!");
             });
         });
     });
@@ -67,7 +66,7 @@ function displayCart(cart) {
     let total = 0;
     cart.forEach(item => {
         let div = document.createElement("div");
-        div.innerHTML = `${item.name} (x${item.qty}) - $${item.price * item.qty} <button onclick="removeItem('${item.id}')">Remove</button>`;
+        div.innerHTML = `${item.name} (x${item.qty}) - ₹${item.price * item.qty} <button onclick="removeItem('${item.id}')">Remove</button>`;
         container.appendChild(div);
         total += item.price * item.qty;
     });
